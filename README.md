@@ -142,6 +142,12 @@ But, you can write configurations to _minil.toml_ file in [TOML](https://github.
 
     You can write 'name' instead of automatically detecting project name out of the directory name.
 
+- module\_maker
+
+    Minilla supports three module building mechanisms. Module::Build::Tiny is the default one and Module::Build or ExtUtils::MakeMaker are the alternatives. See also [FAQ](#faq) section in this document.
+
+        module_maker="ModuleBuild"
+
 - readme\_from
 
         readme_from="lib/My/Foo.pod"
@@ -172,6 +178,9 @@ But, you can write configurations to _minil.toml_ file in [TOML](https://github.
 
     Set x\_authority attribute to META.
     See [https://jawnsy.wordpress.com/2011/02/20/what-is-x\_authority/](https://jawnsy.wordpress.com/2011/02/20/what-is-x_authority/) for more details.
+    Note that now PAUSE itself copies the permissions from the "main module"
+    to any new modules entering the index for the first time,
+    so you don't need to set this attribute anymore.
 
 - allow\_pureperl
 
@@ -380,6 +389,14 @@ But, you can write configurations to _minil.toml_ file in [TOML](https://github.
 
     Use a different module to generate `README.md` from your pod. This
     module must subclass [Pod::Markdown](https://metacpan.org/pod/Pod%3A%3AMarkdown).
+
+- markdown\_maker\_opts
+
+        [markdown_maker_opts]
+        local_module_re = "^MyApp::"
+        local_module_url_prefix = "https://example.org/perl/pod/"
+
+    Specify arguments to pass to `markdown_maker`'s `new()` constructor.
 
 - Metadata
 

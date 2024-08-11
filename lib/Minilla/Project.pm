@@ -10,7 +10,6 @@ use DirHandle;
 use File::pushd;
 use CPAN::Meta;
 use Module::CPANfile;
-use Config::Identity::PAUSE;
 use Module::Runtime qw(require_module);
 
 use Minilla;
@@ -619,13 +618,6 @@ sub generate_minil_toml {
         qq{badges = ["github-actions/test.yml"]},
     );
 
-    my %pause;
-    if (eval { %pause = Config::Identity::PAUSE->load; 1; } && exists $pause{user}) {
-        my $user = uc($pause{user});
-        $content .= qq(\nauthority="cpan:${user}"\n);
-    }
-    warn $@ if $@;
-
     if ($profile eq 'ModuleBuild') {
         $content .= qq{\nmodule_maker="ModuleBuild"\n};
     } elsif ($profile eq 'ExtUtilsMakeMaker') {
@@ -647,7 +639,7 @@ sub regenerate_readme_md {
         $markdown_maker->VERSION('1.322');
     }
 
-    my $parser = $markdown_maker->new;
+    my $parser = $markdown_maker->new( %{ $self->config->{markdown_maker_opts} || {} } );;
     if (not $parser->isa('Pod::Markdown')) {
         errorf("'markdown_maker' config key must be a subclass of Pod::Markdown\n");
     }

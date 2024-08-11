@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno < tokuhirom@gmail.com >"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.1.17, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "Minilla/v3.1.24, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
@@ -56,7 +56,6 @@
             "App::cpanminus" : "1.6902",
             "Archive::Tar" : "1.60",
             "CPAN::Meta" : "2.132830",
-            "Config::Identity" : "0",
             "Data::Section::Simple" : "0.04",
             "ExtUtils::Manifest" : "1.54",
             "File::Which" : "0",
@@ -113,15 +112,16 @@
          "web" : "https://github.com/tokuhirom/Minilla"
       }
    },
-   "version" : "v3.1.18",
-   "x_authority" : "cpan:TOKUHIROM",
+   "version" : "v3.1.25",
    "x_contributors" : [
       "Alex Kapranoff <alex@kapranoff.ru>",
       "Alex Kapranoff <kappa@yandex.ru>",
       "Alexander Karelas <karjala@cpan.org>",
+      "AnaTofuZ <anatofuz@gmail.com>",
       "Anirvan Chatterjee <anirvan@users.noreply.github.com>",
       "Chris White <chrisw@leehayes.com>",
       "Chris White <cxwembedded@gmail.com>",
+      "Dabrien 'Dabe' Murphy <dabe@parabon.com>",
       "Daisuke Maki <lestrrat+github@gmail.com>",
       "Daisuke Murase <typester@cpan.org>",
       "Dan Book <grinnz@gmail.com>",
@@ -147,6 +147,7 @@
       "Peter Oliver <git@mavit.org.uk>",
       "Pine Mizune <pinemz@gmail.com>",
       "Ryo Okamoto <ryo@aquahill.net>",
+      "Sebastian B. Knapp <news@young-workers.de>",
       "Shohei YOSHIDA <syohex@gmail.com>",
       "Shoichi Kaji <skaji@cpan.org>",
       "Shoichi Kaji <skaji@outlook.com>",
@@ -166,6 +167,7 @@
       "kazhiramatsu <kazhiramatsu.github@gmail.com>",
       "keita.iseki <keita.iseki@gmail.com>",
       "kfly8 <kfly@cpan.org>",
+      "kobaken <kentafly88@gmail.com>",
       "mattn <mattn.jp@gmail.com>",
       "moznion <moznion@gmail.com>",
       "sago35 <sago35@gmail.com>",
@@ -173,6 +175,6 @@
       "vti <viacheslav.t@gmail.com>",
       "ysasaki <aloelight@gmail.com>"
    ],
-   "x_serialization_backend" : "JSON::PP version 4.08",
+   "x_serialization_backend" : "JSON::PP version 4.16",
    "x_static_install" : 1
 }

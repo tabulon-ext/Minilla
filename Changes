@@ -2,6 +2,29 @@ Revision history for Perl extension Minilla
 
 {{$NEXT}}
 
+v3.1.25 2024-08-11T14:06:16Z
+    - Add perl 5.40, 5.38 to github action template (kfly8 #334)
+
+v3.1.24 2024-07-25T10:33:18Z
+    - Add markdown_maker_opts configuration (DabeDotCom #332)
+
+v3.1.23 2023-10-07T10:26:39Z
+    - Add documentation for module_maker option (giftnuss #330)
+
+v3.1.22 2023-07-08T05:48:31Z
+    - Support package version syntax (#328)
+
+v3.1.21 2023-02-17T14:36:59Z
+    - Do not set x_authority by default (#326)
+    - Use actions/checkout@v3 (#327)
+
+v3.1.20 2022-11-13T00:03:40Z
+    - Fix test failure issue with git 2.38.1 or higher versions
+    - Improve the way to get git branch name
+
+v3.1.19 2022-06-03T13:38:13Z
+    - Add perl 5.36 to github actions template (AnaTofuZ #320)
+
 v3.1.18 2022-05-10T20:00:37Z
     - Use "prove" in github actions template (#319)
 

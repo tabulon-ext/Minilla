@@ -2,7 +2,7 @@ package Minilla;
 use strict;
 use warnings;
 use 5.010001;
-use version; our $VERSION = version->declare("v3.1.18");
+use version; our $VERSION = version->declare("v3.1.25");
 
 our $DEBUG;
 our $AUTO_INSTALL;
@@ -171,6 +171,12 @@ But, you can write configurations to I<minil.toml> file in L<TOML|https://github
 
 You can write 'name' instead of automatically detecting project name out of the directory name.
 
+=item module_maker
+
+Minilla supports three module building mechanisms. Module::Build::Tiny is the default one and Module::Build or ExtUtils::MakeMaker are the alternatives. See also L<FAQ|/"#FAQ"> section in this document.
+
+    module_maker="ModuleBuild"
+
 =item readme_from
 
     readme_from="lib/My/Foo.pod"
@@ -201,6 +207,9 @@ Grab authors information from the file contains pod.
 
 Set x_authority attribute to META.
 See L<https://jawnsy.wordpress.com/2011/02/20/what-is-x_authority/> for more details.
+Note that now PAUSE itself copies the permissions from the "main module"
+to any new modules entering the index for the first time,
+so you don't need to set this attribute anymore.
 
 =item allow_pureperl
 
@@ -409,6 +418,14 @@ or program. Build fail if the command does not exist.
 
 Use a different module to generate C<README.md> from your pod. This
 module must subclass L<Pod::Markdown>.
+
+=item markdown_maker_opts
+
+    [markdown_maker_opts]
+    local_module_re = "^MyApp::"
+    local_module_url_prefix = "https://example.org/perl/pod/"
+
+Specify arguments to pass to C<markdown_maker>'s C<new()> constructor.
 
 =item Metadata
 
